@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+//This is made for the Dragon bullet
+
 public class PlayerAim : MonoBehaviour
 {
     public Camera cam;

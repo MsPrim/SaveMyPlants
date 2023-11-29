@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386817054}
   - component: {fileID: 386817055}
+  - component: {fileID: 386817056}
   m_Layer: 0
   m_Name: RotateAim
   m_TagString: Untagged
@@ -172,7 +173,24 @@ MonoBehaviour:
   bullet: {fileID: 4474767335762585239, guid: cfe7c090c43b615478e0ce34fea92964, type: 3}
   bulletTransform: {fileID: 1499067011}
   canFire: 1
-  timeBetweenFiring: 0.7
+  timeBetweenFiring: 3.2
+--- !u!114 &386817056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386817053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efacc6bdcfe2ab4c81b001c5bf7a6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 519420031}
+  bullet: {fileID: 6565378662238171420, guid: ea141fd438b4afa4180c23bf1486d7e5, type: 3}
+  bulletTransform: {fileID: 1499067011}
+  canFire: 1
+  timeBetweenFiring: 1
 --- !u!1 &396061340
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,9 +204,10 @@ GameObject:
   - component: {fileID: 396061343}
   - component: {fileID: 396061342}
   - component: {fileID: 396061341}
+  - component: {fileID: 396061346}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,13 +359,28 @@ Transform:
   m_GameObject: {fileID: 396061340}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28751898, y: -0.2982043, z: 0}
+  m_LocalPosition: {x: 3.6175194, y: -2.7882059, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 386817054}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396061346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396061340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b54620e2dc1ed43b86dc932400f7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRange: 11.29
+  maxY: 9.66
+  minY: -9.66
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 3.33, y: -2.49, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -464,7 +498,7 @@ GameObject:
   - component: {fileID: 681281333}
   - component: {fileID: 681281332}
   m_Layer: 0
-  m_Name: SavePlants_Background placeholder
+  m_Name: Background placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,7 +649,7 @@ Transform:
   m_GameObject: {fileID: 1434126095}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.062943, y: 1.99, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.222097, y: 1.222097, z: 1.222097}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -693,7 +727,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 993fcf5e1d3c949438840e13f89db901, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -705,11 +739,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1928266630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1928266631}
+  m_Layer: 0
+  m_Name: MainCameraBounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1928266631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928266630}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.090013, y: -1.8901565, z: -0.0031578601}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 681281333}
   - {fileID: 519420032}
   - {fileID: 396061345}
+  - {fileID: 1928266631}
   - {fileID: 1434126097}
-  - {fileID: 681281333}
