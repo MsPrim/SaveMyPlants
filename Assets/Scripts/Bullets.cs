@@ -10,11 +10,13 @@ public class Bullets : MonoBehaviour
     public float force;
 
     public float returnDelay = 3f;
-    public float shootDelay = 6f;
+    public float shootDelay = 5f;
     public Transform player;
     private bool isReturning = false;
     private bool isBulletActive = false;
     private Vector3 originalPosition;
+
+    //public Transform targetPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class Bullets : MonoBehaviour
     {
         if (isReturning)
         {
-            float speed = 4f;
+            float speed = 10f;
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
             // Check if the bullet has returned to the player then destroy it
@@ -35,6 +37,8 @@ public class Bullets : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+
+            //void flipSprite();
         }
     }
     
@@ -63,10 +67,6 @@ public class Bullets : MonoBehaviour
 
             StartCoroutine(ReturnAfterDelay());
             StartCoroutine(BulletDelay());
-
-            //rotate the bullet
-            //float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-            //transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
@@ -81,5 +81,14 @@ public class Bullets : MonoBehaviour
         // Wait for a delay before shooting again
         yield return new WaitForSeconds(shootDelay);
         isBulletActive = false;
-}
+    }
+
+    //void FlipSprite()
+    //{
+    //    if (transform.position.x < player.position.x)
+    //    {
+    //        // Sprite is moving towards the negative x-axis, so flip it
+    //        transform.localScale = new Vector3(-2f, 2f, 2f);
+    //    }
+    //}
 }
