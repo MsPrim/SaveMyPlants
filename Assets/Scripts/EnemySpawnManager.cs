@@ -36,7 +36,7 @@ public class EnemySpawnManager : MonoBehaviour
     {
         int enemyIndex = Random.Range(0, enemyPrefabs.Length);
         Vector3 spawnPos = new Vector3(-sideSpawnX, Random.Range(sideSpawnMin, sideSpawnMax), 0);
-        Vector3 rotation = new Vector3(0, -180, 0);
+        Vector3 rotation = new Vector3(0, 0, 0);
         Instantiate(enemyPrefabs[enemyIndex], spawnPos, Quaternion.Euler(rotation));
         //spawnInterval += Random.Range(2.0f, 5.1f);
     }

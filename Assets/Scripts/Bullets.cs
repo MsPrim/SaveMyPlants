@@ -8,6 +8,7 @@ public class Bullets : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+    public SpriteRenderer sprite;
 
     public float returnDelay = 3f;
     public float shootDelay = 5f;
@@ -22,6 +23,7 @@ public class Bullets : MonoBehaviour
     void Start()
     {
         fireBullet();
+      //  sprite.flipX = true;
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class Bullets : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-
+            //sprite.flipX = false;
             //void flipSprite();
         }
     }
@@ -75,6 +77,7 @@ public class Bullets : MonoBehaviour
         // Wait for a delay before returning the bullet
         yield return new WaitForSeconds(returnDelay);
         isReturning = true;
+        rb.velocity = Vector3.zero;
     }
     IEnumerator BulletDelay()
     {

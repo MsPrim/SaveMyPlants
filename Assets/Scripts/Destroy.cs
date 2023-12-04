@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
+
+    public int health = 10;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy"))
             {
-                Destroy(gameObject);
+            health -= 1;
+            Destroy(collision.gameObject);
             }
-        }
     }
 }

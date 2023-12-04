@@ -23,7 +23,6 @@ public class PlayerAim : MonoBehaviour
       float AngleRad = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x);
       float angle = (180 / Mathf.PI) * AngleRad;
       transform.rotation = Quaternion.Euler(0, 0, angle);
-      Debug.Log(angle);
 
       if (!canFire)
         {
