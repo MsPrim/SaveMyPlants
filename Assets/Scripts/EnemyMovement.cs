@@ -38,20 +38,19 @@ public class EnemyMovement : MonoBehaviour
     }
 
     //Destroy the enemy if it reaches the target
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Target"))
         {
             Destroy(gameObject);
         }
-        if (collision.CompareTag("Squirrel"))
-        {
-            Destroy(gameObject);
-        }
-        if (collision.CompareTag("Dragon"))
-        {
-            Destroy(gameObject);
-        }
+        //if (collision.CompareTag("Squirrel"))
+        //{
+        //    Destroy(gameObject);
+        //}
+        //if (collision.CompareTag("Dragon"))
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }

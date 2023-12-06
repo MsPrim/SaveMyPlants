@@ -40,8 +40,14 @@ public class PlayerAim : MonoBehaviour
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
         }
+
+        //If it finds the monster it likes to eat
+       // if (collision.CompareTag("Enemy"))
+       // {
+       //     Destroy(gameObject);
+       // }
     }
-     
+
 
 
 
@@ -83,5 +89,5 @@ public class PlayerAim : MonoBehaviour
     //        {
     //            Vector3 worldPosition = worldCamera.ScreenToWorldPoint(screenPosition);
     //           return worldPosition;
-  }
+}
 

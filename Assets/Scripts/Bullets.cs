@@ -8,6 +8,7 @@ public class Bullets : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+
     public SpriteRenderer sprite;
 
     public float returnDelay = 3f;
@@ -58,6 +59,11 @@ public class Bullets : MonoBehaviour
             Vector3 rotation = transform.position - mousePos;
             rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
 
+            if (direction.x > 0)
+            {
+                sprite.flipX = true;
+            }
+
             // Make the bullet come back
             originalPosition = transform.position;
             GameObject playerObject = GameObject.FindWithTag("Player");
@@ -78,6 +84,7 @@ public class Bullets : MonoBehaviour
         yield return new WaitForSeconds(returnDelay);
         isReturning = true;
         rb.velocity = Vector3.zero;
+        sprite.flipX = !sprite.flipX;
     }
     IEnumerator BulletDelay()
     {
