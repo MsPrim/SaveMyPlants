@@ -51,6 +51,7 @@ public class Bullets : MonoBehaviour
         if (isBulletActive == false)
         {
             isBulletActive = true;
+
             //bullet will fire
             mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
             rb = GetComponent<Rigidbody2D>();
@@ -93,12 +94,22 @@ public class Bullets : MonoBehaviour
         isBulletActive = false;
     }
 
-    //void FlipSprite()
+    //private void OnTriggerEnter2D(Collider2D collision)
     //{
-    //    if (transform.position.x < player.position.x)
+    //    if (collision.CompareTag("Enemy"))
     //    {
-    //        // Sprite is moving towards the negative x-axis, so flip it
-    //        transform.localScale = new Vector3(-2f, 2f, 2f);
+    //        Debug.Log("Collision detected:)");
+    //
+    //        Destroy(collision.gameObject);
     //    }
-    //}
-}
+    }
+
+            //void FlipSprite()
+            //{
+            //    if (transform.position.x < player.position.x)
+            //    {
+            //        // Sprite is moving towards the negative x-axis, so flip it
+            //        transform.localScale = new Vector3(-2f, 2f, 2f);
+            //    }
+            //}
+        

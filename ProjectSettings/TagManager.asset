@@ -6,9 +6,9 @@ TagManager:
   tags:
   - player
   - Target
-  - Squirrel
-  - Dragon
   - Enemy
+  - CatBullet
+  - DragonBullet
   layers:
   - Default
   - TransparentFX

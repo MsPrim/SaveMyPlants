@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public string target = "Target";
     public SpriteRenderer sprite;
 
+    public bool isDragon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,15 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(isDragon && collision.CompareTag("DragonBullet"))
+        {
+            Destroy(gameObject);
+        }
+        if(!isDragon && collision.CompareTag("CatBullet"))
+        {
+            Destroy(gameObject);
+        }
+
         //if (collision.CompareTag("Squirrel"))
         //{
         //    Destroy(gameObject);

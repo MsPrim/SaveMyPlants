@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 340608089484841096}
   - component: {fileID: 5244942168811774232}
-  - component: {fileID: 3847170245553574886}
   - component: {fileID: 3308808911908682477}
+  - component: {fileID: 3847170245553574886}
   m_Layer: 0
   m_Name: Dragon Monster
   m_TagString: Enemy
@@ -86,21 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3847170245553574886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6878197116650446619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06795d61220512e4f879aa69dc3758b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 2.5
-  target: Target
-  sprite: {fileID: 5244942168811774232}
 --- !u!61 &3308808911908682477
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +131,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.59116113, y: 0.3786851}
   m_EdgeRadius: 0
+--- !u!114 &3847170245553574886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878197116650446619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06795d61220512e4f879aa69dc3758b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 2.5
+  target: Target
+  sprite: {fileID: 5244942168811774232}
+  isDragon: 1

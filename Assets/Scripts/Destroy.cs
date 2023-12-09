@@ -1,23 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;   //ignore collision
 
 public class Destroy : MonoBehaviour
 {
-
+    public TreeHealth treeHealth;   //call upon the tree health script
     public int health = 10;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
             {
-            health -= 1;
+            Debug.Log("Collision detected");
+
             Destroy(collision.gameObject);
-            }
+
+            treeHealth.health--; 
+
+            if(treeHealth.health <= 0)
+                {
+
+                }
+            else
+                {
+
+                }
+             }
     }
+
+    //IEnumerator beInvincible()
+    //{
+    //    Physics2D.IgnoreLayerCollision();
+    //}
+
 }

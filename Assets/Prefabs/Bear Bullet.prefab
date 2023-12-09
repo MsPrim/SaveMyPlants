@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7204541863515604739}
   m_Layer: 0
   m_Name: Bear Bullet
-  m_TagString: Squirrel
+  m_TagString: CatBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,6 +173,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 10
   sprite: {fileID: 2693790186313038855}
-  returnDelay: 0.5
+  returnDelay: 0.4
   shootDelay: 3
   player: {fileID: 0}

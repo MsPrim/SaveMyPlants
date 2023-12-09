@@ -42,10 +42,10 @@ public class PlayerAim : MonoBehaviour
         }
 
         //If it finds the monster it likes to eat
-       // if (collision.CompareTag("Enemy"))
+       //if (collision.CompareTag("Enemy"))
        // {
        //     Destroy(gameObject);
-       // }
+       //}
     }
 
 
