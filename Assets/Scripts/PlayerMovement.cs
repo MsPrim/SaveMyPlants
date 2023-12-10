@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public EnemySpawnManager spawnManager;
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
@@ -21,17 +22,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        //if (movement.x > 0)
-        //{
-        //    gameObject.transform.localScale = new Vector3(-2, 2, 2);
-        //}
-        //if (movement.x < 0)
-        //{
-        //    gameObject.transform.localScale = new Vector3(2, 2, 2);
-        //}
+        if (spawnManager.isGameActive)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
     }
 
     //Called 50 times a second, avoids lag

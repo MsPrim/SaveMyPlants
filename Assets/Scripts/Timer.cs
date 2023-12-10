@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+    public bool isGameActive;
+
     [Header("Component")]
     public TextMeshProUGUI timerText;
 
@@ -19,7 +22,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isGameActive = true;
     }
 
     // Update is called once per frame
@@ -35,6 +38,10 @@ public class Timer : MonoBehaviour
             SetTimerText();
             timerText.color = Color.red;
             enabled = false;
+            if(currentTime == 0)
+            {
+                GameWon();
+            }
         }
 
         SetTimerText();
@@ -43,5 +50,12 @@ public class Timer : MonoBehaviour
     private void SetTimerText()
     {
         timerText.text = currentTime.ToString("0");
+    }
+    public void GameWon()
+    {
+        //gameOverText.gameObject.SetActive(true);
+        CancelInvoke();
+        isGameActive = false;
+        SceneManager.LoadScene("YouWinScene");
     }
 }

@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawnManager : MonoBehaviour
 {
+    public bool isGameActive;
+    private Destroy destroy;
+    public TextMeshProUGUI gameOverText;
+
     public GameObject[] enemyPrefabs;
 
     private float spawnLimitUp = 14f;
@@ -19,9 +25,12 @@ public class EnemySpawnManager : MonoBehaviour
     public float sideSpawnMax;
     private Vector3 rotation;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        isGameActive = true;
+
         InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
     }
 
@@ -52,14 +61,24 @@ public class EnemySpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float timeNow = Time.realtimeSinceStartup;
-
-        if (timeNow >= spawnInterval)
+        if(isGameActive)
         {
-            SpawnRandomEnemy();
-            SpawnLeftEnemy();
-            SpawnRightEnemy();
-            spawnInterval += Random.Range(2.5f, 6f);
+            float timeNow = Time.realtimeSinceStartup;
+
+            if (timeNow >= spawnInterval)
+            {
+                SpawnRandomEnemy();
+                SpawnLeftEnemy();
+                SpawnRightEnemy();
+                spawnInterval += Random.Range(2.5f, 6f);
+            }
         }
+    }
+    public void GameOver()
+    {
+        //gameOverText.gameObject.SetActive(true);
+        CancelInvoke();
+        isGameActive = false;
+        SceneManager.LoadScene("YouLoseScene");
     }
 }
