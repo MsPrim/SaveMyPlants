@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TreeHealth : MonoBehaviour
 {
     public int health;  //Tree's Remaining Health
-    public int numOfHearts = 10; //tree's total health
+    public int numOfHearts = 6; //tree's total health
 
     public Image[] hearts;
     public Sprite fullHeart;
