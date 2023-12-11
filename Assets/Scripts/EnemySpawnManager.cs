@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemySpawnManager : MonoBehaviour
 {
-    public bool isGameActive;
+    public bool isGameActive = false;
     private Destroy destroy;
     public TextMeshProUGUI gameOverText;
 
@@ -19,6 +19,8 @@ public class EnemySpawnManager : MonoBehaviour
 
     private float startDelay = 2.0f;
     private float spawnInterval = 4.0f;
+    private float rightEnemySpawnInterval = 4.5f;
+    private float leftEnemySpawnInterval = 5.0f;
 
     public float sideSpawnX;
     public float sideSpawnMin;
@@ -29,9 +31,18 @@ public class EnemySpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            isGameActive = true;
 
-        InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
+            if (isGameActive)
+            {
+                InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
+                InvokeRepeating("SpawnRightEnemy", startDelay, rightEnemySpawnInterval);
+                InvokeRepeating("SpawnLeftEnemy", startDelay, leftEnemySpawnInterval);
+            }
+        }
+    
     }
 
     void SpawnRandomEnemy()
@@ -63,15 +74,15 @@ public class EnemySpawnManager : MonoBehaviour
     {
         if(isGameActive)
         {
-            float timeNow = Time.realtimeSinceStartup;
-
-            if (timeNow >= spawnInterval)
-            {
-                SpawnRandomEnemy();
-                SpawnLeftEnemy();
-                SpawnRightEnemy();
-                spawnInterval += Random.Range(2.5f, 6f);
-            }
+           // float timeNow = Time.realtimeSinceStartup;
+           //
+           // if (timeNow >= spawnInterval)
+           // {
+           //     SpawnRandomEnemy();
+           //     SpawnLeftEnemy();
+           //     SpawnRightEnemy();
+           //     spawnInterval += Random.Range(2.5f, 6f);
+           // }
         }
     }
     public void GameOver()

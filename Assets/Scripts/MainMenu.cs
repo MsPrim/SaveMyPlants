@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    //public EnemySpawnManager spawnManager;
+
+    private void Start()
+    {
+
+    }
+
     public void Menu()
     {
         SceneManager.LoadScene("TitleScene");
