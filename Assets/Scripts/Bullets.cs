@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour
 {
+    //public PlayerAim playerAim;
+
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D rb;
@@ -24,7 +26,6 @@ public class Bullets : MonoBehaviour
     void Start()
     {
         fireBullet();
-      //  sprite.flipX = true;
     }
 
     // Update is called once per frame
@@ -40,17 +41,17 @@ public class Bullets : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            //sprite.flipX = false;
-            //void flipSprite();
         }
     }
-    
+
 
     void fireBullet()
     {
         if (isBulletActive == false)
         {
             isBulletActive = true;
+
+            //playerAim.BulletDestroyed();
 
             //bullet will fire
             mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -72,6 +73,7 @@ public class Bullets : MonoBehaviour
             if (playerObject != null)
             {
                 player = playerObject.transform;
+                //playerAim.BulletDestroyed();
             }
 
             StartCoroutine(ReturnAfterDelay());
@@ -93,23 +95,4 @@ public class Bullets : MonoBehaviour
         yield return new WaitForSeconds(shootDelay);
         isBulletActive = false;
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Enemy"))
-    //    {
-    //        Debug.Log("Collision detected:)");
-    //
-    //        Destroy(collision.gameObject);
-    //    }
-    }
-
-            //void FlipSprite()
-            //{
-            //    if (transform.position.x < player.position.x)
-            //    {
-            //        // Sprite is moving towards the negative x-axis, so flip it
-            //        transform.localScale = new Vector3(-2f, 2f, 2f);
-            //    }
-            //}
-        
+}

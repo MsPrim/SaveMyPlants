@@ -11,7 +11,9 @@ public class PlayerAim : MonoBehaviour
 
     public Camera cam;
 
+    public GameObject activeBullet;
     public GameObject bullet;
+
     public Transform bulletTransform;
     public bool canFire;
     private float timer;
@@ -42,9 +44,17 @@ public class PlayerAim : MonoBehaviour
             if (Input.GetMouseButton(0) && canFire)
             {
                 canFire = false;
-                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                activeBullet = Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                }
             }
         }
     }
-}
+
+    //check if the other bullet isn't in the scene
+    //public void BulletDestroyed()
+    //{
+    //    activeBullet = null;
+    //    canFire = true;
+    //}
+
 

@@ -42,7 +42,6 @@ public class EnemySpawnManager : MonoBehaviour
                 InvokeRepeating("SpawnLeftEnemy", startDelay, leftEnemySpawnInterval);
             }
         }
-    
     }
 
     void SpawnRandomEnemy()
