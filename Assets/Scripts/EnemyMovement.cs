@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float movementSpeed = 5f;
+    public float movementSpeed;
+
+    public float minSpeed = 10f;
+    public float maxSpeed = 25f; 
+
     public string target = "Target";
     public SpriteRenderer sprite;
 
@@ -14,6 +18,9 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Set the random movement speed
+        movementSpeed = Random.Range(minSpeed, maxSpeed);
+
         if (transform.position.x < 0)
         {
             sprite.flipX= true;

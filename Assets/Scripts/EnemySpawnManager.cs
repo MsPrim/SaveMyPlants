@@ -17,7 +17,7 @@ public class EnemySpawnManager : MonoBehaviour
     private float spawnLimitDown = -14f;
     private float spawnPosY = -16;
 
-    private float startDelay = 2.0f;
+    private float startDelay = 1.0f;
     private float spawnInterval = 4.0f;
     private float rightEnemySpawnInterval = 4.5f;
     private float leftEnemySpawnInterval = 5.0f;
