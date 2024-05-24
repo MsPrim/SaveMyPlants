@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     public float movementSpeed;
 
     public float minSpeed = 10f;
-    public float maxSpeed = 25f; 
+    public float maxSpeed = 35f; 
 
     public string target = "Target";
     public SpriteRenderer sprite;

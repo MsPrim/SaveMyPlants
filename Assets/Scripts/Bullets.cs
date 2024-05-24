@@ -11,6 +11,9 @@ public class Bullets : MonoBehaviour
     private Rigidbody2D rb;
     public float force;
 
+    private PlayerAim playerScript;
+    private PlayerAim2 playerScript2;
+
     public SpriteRenderer sprite;
 
     public float returnDelay = 3f;
@@ -39,6 +42,8 @@ public class Bullets : MonoBehaviour
             // Check if the bullet has returned to the player then destroy it
             if (transform.position == player.position)
             {
+                //playerScript.BulletDestroyed();
+                //playerScript2.BulletDestroyed();
                 Destroy(gameObject);
             }
         }

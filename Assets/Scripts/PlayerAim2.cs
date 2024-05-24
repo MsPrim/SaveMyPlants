@@ -10,6 +10,8 @@ public class PlayerAim2 : MonoBehaviour
 
     public Camera cam;
 
+    //private Bullets bulletScript;
+
     public GameObject bullet;
     public Transform bulletTransform;
     public bool canFire;
@@ -42,7 +44,13 @@ public class PlayerAim2 : MonoBehaviour
             {
                 canFire = false;
                 Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                //bulletScript = bullet.GetComponent<Bullets>();
             }
         }
+    }
+    //check if the other bullet isn't in the scene
+    public void BulletDestroyed()
+    {
+        //bulletScript = null;
     }
 }
