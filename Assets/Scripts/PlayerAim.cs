@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerAim : MonoBehaviour
 {
-    public EnemySpawnManager spawnManager;
+    public EnemySpawnManager2 spawnManager;
 
     public Camera cam;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public EnemySpawnManager spawnManager;
+    public EnemySpawnManager2 spawnManager;
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;

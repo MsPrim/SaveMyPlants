@@ -11,7 +11,7 @@ public class Bullets : MonoBehaviour
     private Rigidbody2D rb;
     public float force;
 
-    private PlayerAim playerScript;
+    //private PlayerAim playerScript;
     private PlayerAim2 playerScript2;
 
     public SpriteRenderer sprite;

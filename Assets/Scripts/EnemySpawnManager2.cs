@@ -23,7 +23,7 @@ public class EnemySpawnManager2 : MonoBehaviour
 
     private float elapsedTime = 0f;
     private float intervalDecreaseTime = 30f; // Time after which to decrease the interval
-    private float minInterval = 2.5f; // Minimum interval to prevent spawning too fast
+    private float minInterval = 2.0f; // Minimum interval to prevent spawning too fast
 
     private void Start()
     {
@@ -50,7 +50,7 @@ public class EnemySpawnManager2 : MonoBehaviour
             Vector3 spawnPos = new Vector3(Random.Range(spawnLimitUp, spawnLimitDown), spawnPosY, 0);
             Instantiate(enemyPrefabs[randomEnemyIndex], spawnPos, enemyPrefabs[0].transform.rotation);
 
-            float spawnInterval = Mathf.Max(Random.Range(3.0f, 5.0f) - (elapsedTime / intervalDecreaseTime), minInterval);
+            float spawnInterval = Mathf.Max(Random.Range(2.5f, 4.5f) - (elapsedTime / intervalDecreaseTime), minInterval);
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -65,7 +65,7 @@ public class EnemySpawnManager2 : MonoBehaviour
             Vector3 spawnPos = new Vector3(-sideSpawnX, Random.Range(sideSpawnMin, sideSpawnMax), 0);
             Instantiate(enemyPrefabs[enemyIndex], spawnPos, Quaternion.identity);
 
-            float spawnInterval = Mathf.Max(Random.Range(3.0f, 5.0f) - (elapsedTime / intervalDecreaseTime), minInterval);
+            float spawnInterval = Mathf.Max(Random.Range(2.5f, 4.5f) - (elapsedTime / intervalDecreaseTime), minInterval);
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -79,7 +79,7 @@ public class EnemySpawnManager2 : MonoBehaviour
             Vector3 spawnPos = new Vector3(sideSpawnX, Random.Range(sideSpawnMin, sideSpawnMax), 0);
             Instantiate(enemyPrefabs[enemyIndex], spawnPos, Quaternion.identity);
 
-            float spawnInterval = Mathf.Max(Random.Range(3.0f, 5.0f) - (elapsedTime / intervalDecreaseTime), minInterval);
+            float spawnInterval = Mathf.Max(Random.Range(2.5f, 4.5f) - (elapsedTime / intervalDecreaseTime), minInterval);
             yield return new WaitForSeconds(spawnInterval);
         }
     }

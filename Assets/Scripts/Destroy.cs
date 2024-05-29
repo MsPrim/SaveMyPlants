@@ -8,7 +8,7 @@ using TMPro;
 
 public class Destroy : MonoBehaviour
 {
-    public EnemySpawnManager spawnManager;
+    public EnemySpawnManager2 spawnManager;
 
     public TextMeshProUGUI gameOverText;
 

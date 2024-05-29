@@ -15,6 +15,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
     }
+
 }
     [System.Serializable]
     public class Message
@@ -29,4 +30,5 @@ public class DialogueTrigger : MonoBehaviour
         public string name;
         public Sprite sprite;
     }
+
 

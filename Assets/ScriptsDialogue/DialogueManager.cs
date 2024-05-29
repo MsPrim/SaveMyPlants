@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,10 +14,15 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI messageText;
     public RectTransform backgroundBox;
 
+    public float typingSpeed = 0.05f;
+
     Message[] currentMessages;
     Actor[] currentActors;
     int activeMessage = 0;
     public static bool isActive = false;
+
+    private bool isTyping = false;
+    private bool skipTyping = false;
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -29,33 +36,38 @@ public class DialogueManager : MonoBehaviour
     }
     void DisplayMessage()
     {
+        StopAllCoroutines();
         Message messageToDisplay = currentMessages[activeMessage];
         messageText.text = messageToDisplay.message;
 
         Actor actorToDisplay = currentActors[messageToDisplay.actorId];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
+
+        // Start the typing effect
+        StartCoroutine(TypeScentence(messageToDisplay.message));
     }
     public void NextMessage()
     {
-        activeMessage++;
-        if (activeMessage < currentMessages.Length)
+        if (isTyping)
         {
-            DisplayMessage();
+            skipTyping = true;
         }
         else
         {
-            Debug.Log("Conversation Ended!");
-            isActive = false;
-            SceneManager.LoadScene("SampleScene");
+            activeMessage++;
+            if (activeMessage < currentMessages.Length)
+            {
+                DisplayMessage();
+            }
+            else
+            {
+                Debug.Log("Conversation Ended!");
+                isActive = false;
+                SceneManager.LoadScene("SampleScene");
+            }
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -63,5 +75,25 @@ public class DialogueManager : MonoBehaviour
         {
             NextMessage();
         }
+    }
+    IEnumerator TypeScentence(string sentence)
+    {
+        messageText.text = "";
+        isTyping = true;
+        skipTyping = false;
+
+        foreach (char letter in sentence.ToCharArray())
+        {
+            if (skipTyping)
+            {
+                messageText.text = sentence;
+                break;
+            }
+
+            messageText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        isTyping = false;
     }
 }

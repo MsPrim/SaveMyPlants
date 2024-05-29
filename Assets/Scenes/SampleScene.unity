@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad78105a1b7312c4183f352ffd7aca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManager: {fileID: 1361606622}
+  spawnManager: {fileID: 1361606624}
   cam: {fileID: 519420031}
   activeBullet: {fileID: 4474767335762585239, guid: cfe7c090c43b615478e0ce34fea92964, type: 3}
   bullet: {fileID: 4474767335762585239, guid: cfe7c090c43b615478e0ce34fea92964, type: 3}
@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efacc6bdcfe2ab4c81b001c5bf7a6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManager: {fileID: 1361606622}
+  spawnManager: {fileID: 1361606624}
   cam: {fileID: 519420031}
   bullet: {fileID: 6565378662238171420, guid: ea141fd438b4afa4180c23bf1486d7e5, type: 3}
   bulletTransform: {fileID: 1499067011}
@@ -1626,7 +1626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0b023ff737cd246afdca925704f7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManager: {fileID: 1361606622}
+  spawnManager: {fileID: 1361606624}
   moveSpeed: 5
   rb: {fileID: 396061343}
   animator: {fileID: 396061347}
@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd19044cf2a1e94899056f3086aea22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManager: {fileID: 1361606622}
+  spawnManager: {fileID: 1361606624}
   gameOverText: {fileID: 658888726}
   treeHealth: {fileID: 47310056}
   health: 10
@@ -4996,7 +4996,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1361606623}
-  - component: {fileID: 1361606622}
   - component: {fileID: 1361606624}
   m_Layer: 0
   m_Name: Enemy Spawn Manager
@@ -5005,26 +5004,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1361606622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361606621}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 421ab8f0dba75e24cbfed2e8bb5b964c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGameActive: 1
-  gameOverText: {fileID: 658888726}
-  enemyPrefabs:
-  - {fileID: 202726834624839000, guid: e1bb28e089619094d80832f66fba88fd, type: 3}
-  - {fileID: 6878197116650446619, guid: 1ae09ea74ec70704e97c4c3e22ef1e74, type: 3}
-  sideSpawnX: 21
-  sideSpawnMin: -15
-  sideSpawnMax: 15
 --- !u!4 &1361606623
 Transform:
   m_ObjectHideFlags: 0
