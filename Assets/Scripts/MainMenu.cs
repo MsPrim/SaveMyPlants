@@ -22,6 +22,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void StoryMode()
+    {
+        SceneManager.LoadScene("IntroCutScene");
+    }
+
     public void Controls()
     {
         SceneManager.LoadScene("ControlsScreen");
