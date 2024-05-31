@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -23,6 +24,9 @@ public class DialogueManager : MonoBehaviour
 
     private bool isTyping = false;
     private bool skipTyping = false;
+
+    public PlayableDirector playableDirector;
+    public Image timelineImage;
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -64,9 +68,18 @@ public class DialogueManager : MonoBehaviour
             {
                 Debug.Log("Conversation Ended!");
                 isActive = false;
-                SceneManager.LoadScene("SampleScene");
+
+                playableDirector.Play();
+
+                StartCoroutine(WaitAndLoadScene());
             }
         }
+    }
+    void Start()
+    {
+        // Subscribe to the PlayableDirector played event
+        playableDirector.played += OnPlayableDirectorPlayed;
+        timelineImage.enabled = false;
     }
     // Update is called once per frame
     void Update()
@@ -95,5 +108,18 @@ public class DialogueManager : MonoBehaviour
         }
 
         isTyping = false;
+    }
+    void OnPlayableDirectorPlayed(PlayableDirector director)
+    {
+        if (director == playableDirector)
+        {
+            // Enable the image when the timeline starts playing
+            timelineImage.enabled = true;
+        }
+    }
+    IEnumerator WaitAndLoadScene()
+    {
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene("SampleScene");
     }
 }
