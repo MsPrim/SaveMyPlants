@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//This is made for the bear bullet
-
-public class PlayerAim2 : MonoBehaviour
+public class DragonBullet : MonoBehaviour
 {
     public EnemySpawnManager2 spawnManager;
 
@@ -12,7 +10,9 @@ public class PlayerAim2 : MonoBehaviour
 
     //private Bullets bulletScript;
 
+    public GameObject activeBullet;
     public GameObject bullet;
+
     public Transform bulletTransform;
     public bool canFire;
     private float timer;
@@ -39,15 +39,16 @@ public class PlayerAim2 : MonoBehaviour
                 }
             }
 
-            //To get the player's right click and fire
-            if (Input.GetMouseButton(1) && canFire)
+            //To get the player's click and fire
+            if (Input.GetMouseButton(0) && canFire)
             {
                 canFire = false;
-                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                activeBullet = Instantiate(bullet, bulletTransform.position, Quaternion.identity);
                 //bulletScript = bullet.GetComponent<Bullets>();
             }
         }
     }
+
     //check if the other bullet isn't in the scene
     public void BulletDestroyed()
     {

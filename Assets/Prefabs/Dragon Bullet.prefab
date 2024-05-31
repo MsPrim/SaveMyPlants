@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4450694290196112474}
   - component: {fileID: -4696843682587978461}
   - component: {fileID: 8861294587209714500}
+  - component: {fileID: 3480177491378940630}
   m_Layer: 0
   m_Name: Dragon Bullet
   m_TagString: DragonBullet
@@ -273,3 +274,24 @@ MonoBehaviour:
   returnDelay: 0.4
   shootDelay: 3
   player: {fileID: 0}
+--- !u!95 &3480177491378940630
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474767335762585239}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 12075319e8450d84591152602287da1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

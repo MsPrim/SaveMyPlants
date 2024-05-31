@@ -1446,8 +1446,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 386817054}
-  - component: {fileID: 386817055}
-  - component: {fileID: 386817056}
+  - component: {fileID: 386817057}
+  - component: {fileID: 386817058}
   m_Layer: 0
   m_Name: RotateAim
   m_TagString: Untagged
@@ -1471,7 +1471,7 @@ Transform:
   - {fileID: 1499067011}
   m_Father: {fileID: 396061345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &386817055
+--- !u!114 &386817057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1480,17 +1480,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 386817053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad78105a1b7312c4183f352ffd7aca32, type: 3}
+  m_Script: {fileID: 11500000, guid: 864293c8c499b2440b495af578b847ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1361606624}
   cam: {fileID: 519420031}
-  activeBullet: {fileID: 4474767335762585239, guid: cfe7c090c43b615478e0ce34fea92964, type: 3}
+  activeBullet: {fileID: 6565378662238171420, guid: ea141fd438b4afa4180c23bf1486d7e5, type: 3}
   bullet: {fileID: 4474767335762585239, guid: cfe7c090c43b615478e0ce34fea92964, type: 3}
   bulletTransform: {fileID: 1499067011}
   canFire: 1
   timeBetweenFiring: 1
---- !u!114 &386817056
+--- !u!114 &386817058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 386817053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efacc6bdcfe2ab4c81b001c5bf7a6ed, type: 3}
+  m_Script: {fileID: 11500000, guid: defc024f8cea0664ebd9ef2f9e155cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1361606624}
@@ -5098,7 +5098,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: d93495354c452524ba995e560b8434e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0eef04168fe869a4fb726cbbf6636f20, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-//This is made for the Dragon bullet
-
-public class PlayerAim : MonoBehaviour
+public class CatBullet : MonoBehaviour
 {
     public EnemySpawnManager2 spawnManager;
 
@@ -13,9 +10,7 @@ public class PlayerAim : MonoBehaviour
 
     //private Bullets bulletScript;
 
-    public GameObject activeBullet;
     public GameObject bullet;
-
     public Transform bulletTransform;
     public bool canFire;
     private float timer;
@@ -42,21 +37,18 @@ public class PlayerAim : MonoBehaviour
                 }
             }
 
-            //To get the player's click and fire
-            if (Input.GetMouseButton(0) && canFire)
+            //To get the player's right click and fire
+            if (Input.GetMouseButton(1) && canFire)
             {
                 canFire = false;
-                activeBullet = Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
                 //bulletScript = bullet.GetComponent<Bullets>();
             }
         }
     }
-
     //check if the other bullet isn't in the scene
     public void BulletDestroyed()
     {
         //bulletScript = null;
     }
 }
-
-

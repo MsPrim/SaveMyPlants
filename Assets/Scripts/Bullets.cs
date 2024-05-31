@@ -12,7 +12,7 @@ public class Bullets : MonoBehaviour
     public float force;
 
     //private PlayerAim playerScript;
-    private PlayerAim2 playerScript2;
+    private CatBullet playerScript2;
 
     public SpriteRenderer sprite;
 

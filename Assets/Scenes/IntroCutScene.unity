@@ -694,6 +694,8 @@ PlayableDirector:
     value: {fileID: 306820840}
   - key: {fileID: 3367635306726417956, guid: b0b7829b817d9624c919929f05ca1a8b, type: 2}
     value: {fileID: 764821066}
+  - key: {fileID: 6422314895930159052, guid: b0b7829b817d9624c919929f05ca1a8b, type: 2}
+    value: {fileID: 1213526379}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &472698222
@@ -1294,6 +1296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1213526378}
   - component: {fileID: 1213526377}
+  - component: {fileID: 1213526379}
   m_Layer: 0
   m_Name: Dragon Bullet
   m_TagString: Untagged
@@ -1342,7 +1345,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: bff9bc934d7c23746a515b46789fcfc6, type: 3}
+  m_Sprite: {fileID: -737273359, guid: 33a694e024a15d748a188d32c7915b79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -1368,6 +1371,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1213526379
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213526376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eaa9e9eed395ffe49aa2eb949b93bbb0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1233289791
 GameObject:
   m_ObjectHideFlags: 0
