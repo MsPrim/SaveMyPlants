@@ -405,7 +405,6 @@ GameObject:
   - component: {fileID: 385887073}
   - component: {fileID: 385887075}
   - component: {fileID: 385887074}
-  - component: {fileID: 385887076}
   - component: {fileID: 385887077}
   - component: {fileID: 385887078}
   m_Layer: 5
@@ -476,24 +475,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385887072}
   m_CullTransparentMesh: 1
---- !u!114 &385887076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385887072}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79dce7d56562dc448102344c7261dbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 935155193}
-  lines:
-  - Hey! Stop!!
-  - That's our tree. Our village needs the fruit to survive.
-  - If we don't have any fruit for the upcoming festival, I-I'll lose my job!!
-  textSpeed: 0.1
 --- !u!114 &385887077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,9 +489,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: Hey! Stop!!
+    message: H-Hey!! STOP!!
   - actorId: 0
-    message: That's our village's brain tree. If we don't have any fruit for the
+    message: That's our village's brain tree! If we don't have any fruit for the
       upcoming festival, I-I'll lose my job!
   - actorId: 2
     message: Foolish human. You are weak, what makes you think you can stop us?
@@ -526,28 +507,28 @@ MonoBehaviour:
   - actorId: 1
     message: Food?! I'm in, meow!
   - actorId: 2
-    message: Hmmm...I still need more convincing.
+    message: Hmph, I am an almighty dragon, I can find my own food source just fine.
   - actorId: 0
     message: Okay....AND I'll let you stay in my house.
   - actorId: 0
     message: Look, this deal is much more reliable than stealing from our village.
-      Both of you could get in some serious trouble. It's better to become my familiars.
+      Both of you could get in some serious trouble!
   - actorId: 2
-    message: 'You strike a good bargan. You won''t regret the honor of having us
-      as your familiars. '
+    message: 'No more sleeping outside?? Ehem, you strike a good bargan. You won''t
+      regret the honor of having us as your familiars. '
   - actorId: 0
-    message: Yay! Awesome!!
+    message: YAY! Awesome!!
   - actorId: 0
     message: 'There should be a hoard of monsters arriving right around this time.
-      They''ll make for a tasty alternative. Let''s get right to it! '
+      They''ll make for a tasty alternative. I''ll direct you to them. '
   - actorId: 1
-    message: Fiinee...But I only eat the bug monsters, meow.
+    message: Fiinee...But I only eat the bug monsters, meow. Nice and chewy.
   - actorId: 2
-    message: Then I'll eat the eye monsters. They're the only palatable monster out
+    message: I only eat the eye monsters. They're the only palatable monster out
       there anyways.
   - actorId: 0
-    message: I'll make sure to be extra careful. I'm happy to be working with you
-      two!
+    message: I'll make sure to be extra careful. Now lets make the contract before
+      the hoard comes!
   actors:
   - name: Riley
     sprite: {fileID: 0}
