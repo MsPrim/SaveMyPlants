@@ -743,7 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e28c17814fde243a3c0507bd2fc985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeTime: 6.5
+  changeTime: 7
   sceneName: IntroDialogueScene
 --- !u!4 &532008334
 Transform:
@@ -855,7 +855,7 @@ Animator:
   m_GameObject: {fileID: 764821063}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96f77c4b506366f4ea3c2909f704c491, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
